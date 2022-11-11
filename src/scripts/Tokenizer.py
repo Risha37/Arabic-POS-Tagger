@@ -21,7 +21,7 @@ class tokenizer:
             - ignoreList: A list of undesirable punctuations.
         """
         ignoreList = (list(string.punctuation) + list(string.ascii_letters) +
-                      '1 2 3 4 5 6 7 8 9 0 ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ؟ …  ُ  َ  ِ  ْ  ّ  ً  ٌ  ٍ  ٰ ﴿ ﴾ ،'.split())
+                      '''1 2 3 4 5 6 7 8 9 0 ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ؟ …  ُ  َ  ِ  ْ  ّ  ً  ٌ  ٍ  ٰ ﴿ ﴾ ، " ' ” '''.split())
         return ignoreList
     
     
