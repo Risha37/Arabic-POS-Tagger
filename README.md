@@ -6,4 +6,10 @@
 #### After extracting the file, launch "Arabic Postagger.exe." and voila
 
 ------------------------------------------------------------------------------------------------------------------------------
-# Approach and Calculating the Accuracy
+# Approach
+##
+------------------------------------------------------------------------------------------------------------------------------
+# Evaluation Metrics
+## Accuracy
+## Precision
+## Recall
