@@ -3,9 +3,9 @@
 1,التاريخ,Noun
 2,هو,Noun
 3,في,Particle
-4,ظاهره,Noun
+4,ظاهره,Verb
 5,لا,Particle
-6,يزيد,Verb
+6,يزيد,Noun
 7,على,Particle
 8,الإخبار,Noun
 9,عن,Particle
@@ -35,7 +35,7 @@
 33,للكائنات,Noun
 34,مبادئها,Noun
 35,دقيق,Noun
-36,علم,Noun
+36,علم,Verb
 37,بكيفيات,Noun
 38,الوقائع,Noun
 39,أسبابها,Noun
@@ -47,6 +47,6 @@
 45,عريق,Noun
 46,جدير,Noun
 47,بأن,Particle
-48,يعد,Noun
+48,يعد,Verb
 49,علوها,Noun
 50,خليق,Noun

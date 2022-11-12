@@ -10,7 +10,7 @@
 8,اللوى,Noun
 9,بين,Noun
 10,الدخول,Noun
-11,فحومل,Noun
+11,فحومل,Verb
 12,فتوضح,Verb
 13,فالمقراة,Noun
 14,لم,Particle
@@ -26,10 +26,10 @@
 24,في,Particle
 25,عرصاتها,Noun
 26,قيعانها,Noun
-27,كأنه,Noun
+27,كأنه,Particle
 28,حب,Noun
 29,فلفل,Noun
-30,كأني,Noun
+30,كأني,Particle
 31,غداة,Noun
 32,البين,Noun
 33,يوم,Noun
@@ -38,7 +38,7 @@
 36,سمرات,Noun
 37,الحي,Noun
 38,ناقف,Noun
-39,حنظل,Noun
+39,حنظل,Verb
 40,وقوفا,Noun
 41,بها,Particle
 42,صحبي,Noun
@@ -55,6 +55,6 @@
 53,مهراقة,Noun
 54,فهل,Particle
 55,عند,Noun
-56,رسم,Noun
+56,رسم,Verb
 57,دارس,Noun
 58,معول,Noun

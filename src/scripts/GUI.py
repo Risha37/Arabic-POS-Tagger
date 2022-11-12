@@ -43,6 +43,9 @@ frame3.pack(fill=X)
 frame4 = Frame(root)
 frame4.pack(fill=BOTH)
 
+# frame5 = Frame(root)
+# frame5.pack(fill=X)
+
 
 doc_label = Label(frame1, text="Selected Text:", font=('times', 16, 'normal'))
 doc_label.pack(side=LEFT, padx=(20,0),pady=(10,0))
@@ -136,7 +139,7 @@ def save_tags():
 
 tag_button = Button(frame3, width=20, text='Save Tags', command=save_tags)
 tag_button['font'] = times
-tag_button.pack(side=RIGHT, padx=(0,150), pady=(20,0))
+tag_button.pack()
 
 
 

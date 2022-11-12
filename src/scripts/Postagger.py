@@ -36,7 +36,7 @@ class postagger:
             - tags: A dictionary that includes each word and its associated tag.
         """
         
-        afaal1, afaal2, horoof, asmaa = pt().get_patterns()
+        afaal1, afaal2, horoof, asmaa1, asmaa2 = pt().get_patterns()
         tokens = self.get_tokens()
         
         tags = {}
@@ -45,7 +45,7 @@ class postagger:
         for sentence in tokens:
             for word in sentence:
                 
-                if re.search(horoof, word):
+                if re.search(horoof, word) or word=='و':
                     tags[word] = "Particle"
                     tagsList.append({word: "Particle"})
                 
@@ -53,7 +53,10 @@ class postagger:
                 elif word.startswith(('ال', 'كال', 'فال', 'بال')) or word.endswith(('ة', 'ات', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه', 'هما', 'كما')):
                     tags[word] = "Noun"
                     tagsList.append({word: "Noun"})
-                elif (word in nouns.nouns.split(sep='|')) or (re.search(asmaa, word)):
+                elif re.search(asmaa1, word):
+                        tags[word] = "Noun"
+                        tagsList.append({word: "Noun"})
+                elif (word in nouns.nouns.split(sep='|')) or (re.search(asmaa2, word)):
                     tags[word] = "Noun"
                     tagsList.append({word: "Noun"})
                 
@@ -64,9 +67,9 @@ class postagger:
                 elif (word in verbs.verbs.split('|')) or (re.search(afaal2, word)):
                     tags[word] = "Verb"
                     tagsList.append({word: "Verb"})
-#                 elif len(word) == 3:
-#                     tags[word] = "Verb"
-#                     tagsList.append({word: "Verb"})
+                elif len(word) == 3:
+                    tags[word] = "Verb"
+                    tagsList.append({word: "Verb"})
                     
                 
                 else:

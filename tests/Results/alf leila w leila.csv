@@ -14,7 +14,7 @@
 12,التجار,Noun
 13,كثير,Noun
 14,المال,Noun
-15,و,Noun
+15,و,Particle
 16,المعاملات,Noun
 17,في,Particle
 18,البلاد,Noun
@@ -49,7 +49,7 @@
 47,طويل,Noun
 48,القامة,Noun
 49,بيده,Noun
-50,سيف,Noun
+50,سيف,Verb
 51,فدنا,Verb
 52,ذلك,Noun
 53,التاجر,Noun
@@ -67,7 +67,7 @@
 65,ولدك,Verb
 66,لما,Particle
 67,أكلت,Verb
-68,رميت,Verb
+68,رميت,Noun
 69,نواتها,Noun
 70,جاءت,Verb
 71,صدر,Verb
@@ -104,7 +104,7 @@
 102,ميثاق,Noun
 103,فتفعل,Verb
 104,بي,Particle
-105,تريد,Verb
+105,تريد,Noun
 106,والله,Noun
 107,أقول,Verb
 108,وكيل,Noun

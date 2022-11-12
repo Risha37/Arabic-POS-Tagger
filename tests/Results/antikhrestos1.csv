@@ -7,7 +7,7 @@
 5,يأتي,Verb
 6,المخلص,Noun
 7,العظيم,Noun
-8,و,Noun
+8,و,Particle
 9,الفتاة,Noun
 10,البريئة,Noun
 11,القلقة,Noun
@@ -47,7 +47,7 @@
 45,في,Particle
 46,المرعى,Noun
 47,يهش,Verb
-48,بعصاه,Verb
+48,بعصاه,Noun
 49,عليها,Particle
 50,من,Particle
 51,آن,Noun
@@ -60,7 +60,7 @@
 58,الطبيعة,Noun
 59,الساحرة,Noun
 60,لا,Particle
-61,يكون,Verb
+61,يكون,Noun
 62,نحن,Noun
 63,مملكة,Noun
 64,آشور,Noun
@@ -70,8 +70,8 @@
 68,بابل,Noun
 69,أعظم,Noun
 70,رأتها,Verb
-71,عين,Verb
-72,إنس,Noun
+71,عين,Noun
+72,إنس,Verb
 73,أو,Particle
 74,جن,Verb
 75,التاريخ,Noun

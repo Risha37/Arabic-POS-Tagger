@@ -3,7 +3,7 @@
 1,زلزلت,Verb
 2,الأرض,Noun
 3,زلزالها,Noun
-4,و,Noun
+4,و,Particle
 5,أخرجت,Verb
 6,أثقالها,Noun
 7,قال,Verb
@@ -14,12 +14,12 @@
 12,تحدث,Verb
 13,أخبارها,Noun
 14,بأن,Particle
-15,ربك,Verb
+15,ربك,Noun
 16,أوحى,Verb
 17,يصدر,Verb
 18,الناس,Noun
 19,أشتاتا,Verb
-20,ليروا,Verb
+20,ليروا,Noun
 21,أعمالهم,Noun
 22,فمن,Particle
 23,يعمل,Verb

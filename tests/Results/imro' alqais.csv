@@ -4,9 +4,9 @@
 2,من,Particle
 3,ذكرى,Verb
 4,حبيب,Noun
-5,و,Noun
+5,و,Particle
 6,منزل,Noun
-7,بسقط,Verb
+7,بسقط,Noun
 8,اللوى,Noun
 9,بين,Noun
 10,الدخول,Noun
@@ -32,9 +32,9 @@
 30,كأني,Particle
 31,غداة,Noun
 32,البين,Noun
-33,يوم,Noun
+33,يوم,Verb
 34,تحملوا,Verb
-35,لدى,Verb
+35,لدى,Noun
 36,سمرات,Noun
 37,الحي,Noun
 38,ناقف,Noun

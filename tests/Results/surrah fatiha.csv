@@ -6,7 +6,7 @@
 4,الرحمن,Noun
 5,الرحيم,Noun
 6,مالك,Noun
-7,يوم,Noun
+7,يوم,Verb
 8,الدين,Noun
 9,إياك,Noun
 10,نعبد,Verb
@@ -21,6 +21,6 @@
 19,عليهم,Particle
 20,غير,Particle
 21,المغضوب,Noun
-22,و,Noun
+22,و,Particle
 23,لا,Particle
 24,الضالين,Noun
