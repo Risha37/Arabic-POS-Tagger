@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# The GUI is Based on OmarQaisi/Part-Of-Speech-Tagger-for-Arabic-Language
+# The GUI is Based on OmarQaisi/Part-Of-Speech-Tagger-for-Arabic-Language.
 
 
 from tkinter import *
