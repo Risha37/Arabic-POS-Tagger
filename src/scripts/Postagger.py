@@ -50,7 +50,7 @@ class postagger:
                     tagsList.append({word: "Particle"})
                 
                 
-                elif word.startswith(('ال', 'كال', 'فال')) or word.endswith(('ة', 'ات', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه', 'هما', 'كما')):
+                elif word.startswith(('ال', 'كال', 'فال', 'بال')) or word.endswith(('ة', 'ات', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه', 'هما', 'كما')):
                     tags[word] = "Noun"
                     tagsList.append({word: "Noun"})
                 elif (word in nouns.nouns.split(sep='|')) or (re.search(asmaa, word)):
