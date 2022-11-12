@@ -5,7 +5,7 @@
 ### **Simply go to the Releases tab and download the "Arabic Postagger.rar" file, then follow the instructions**:
 #### After extracting the file, launch "Arabic Postagger.exe." and voila
 ------------------------------------------------------------------------------------------------------------------------------
-GUI:
+##GUI:
 
 ![image](https://user-images.githubusercontent.com/111304735/201467001-d690afb8-2abd-4424-a154-93bdf1711ef1.png)
 ------------------------------------------------------------------------------------------------------------------------------
