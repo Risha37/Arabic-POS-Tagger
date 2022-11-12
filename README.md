@@ -4,3 +4,6 @@
 
 ### **Simply go to the Releases tab and download the "Arabic Postagger.rar" file, then follow the instructions**:
 #### After extracting the file, launch "Arabic Postagger.exe." and voila
+
+
+# Approach and Calculating the Accuracy
