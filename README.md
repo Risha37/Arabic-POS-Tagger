@@ -13,6 +13,6 @@
 ##
 ------------------------------------------------------------------------------------------------------------------------------
 # Evaluation Metrics
-## Accuracy = 87.42% (Tested Only on the 10 Documents in the tests file)
+## Accuracy = 92.28% (Tested Only on the 10 Documents in the tests file)
 ## Precision
 ## Recall
