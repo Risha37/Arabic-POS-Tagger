@@ -13,6 +13,6 @@ GUI:
 ##
 ------------------------------------------------------------------------------------------------------------------------------
 # Evaluation Metrics
-## Accuracy
+## Accuracy = 87.43% (Tested Only on the 10 Documents in the tests file)
 ## Precision
 ## Recall
