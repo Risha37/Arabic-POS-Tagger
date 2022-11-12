@@ -1,4 +1,4 @@
-#    $Author: belal (risha) $
+#    $Author: ezzeddin  $
 #    $Revision: 1.7 $
 
 import string
