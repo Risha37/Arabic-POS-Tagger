@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# belal (risha)
 # The GUI is Based on OmarQaisi/Part-Of-Speech-Tagger-for-Arabic-Language
 
 
