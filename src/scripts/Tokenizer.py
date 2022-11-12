@@ -5,7 +5,7 @@ import string
 
 class tokenizer:
     """
-    This class takes a document file, cleans it, and tokenizes it into a list of individual words.
+    This class takes a document file, cleans it, and tokenizes it into list of individual words.
      Input:
         - document: A document file (.txt preferred) containing the sentences.
     """
