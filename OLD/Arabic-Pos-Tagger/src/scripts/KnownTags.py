@@ -1,4 +1,4 @@
-#    $Author: belal (a.k.a risha) $
+#    $Author: ezzeddin $
 #    $Revision: 1.2 $
 
 import Nouns
