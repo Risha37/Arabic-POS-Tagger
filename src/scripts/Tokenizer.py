@@ -1,5 +1,5 @@
 #    $Author: belal (risha) $
-#    $Revision: 1.0 $
+#    $Revision: 1.2 $
 
 import string
 
@@ -21,8 +21,9 @@ class tokenizer:
             - ignoreList: A list of undesirable punctuations.
         """
         ignoreList = (list(string.punctuation) + list(string.ascii_letters) +
-                      '''1 2 3 4 5 6 7 8 9 0 ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ؟ …  ُ  َ  ِ  ْ  ّ  ً  ٌ  ٍ  ٰ ﴿ ﴾ ، " ' ” “ ·  ۛ  ۗ  ۚ  ۙ'''.split())
-        return ignoreList
+                      '''1 2 3 4 5 6 7 8 9 0 ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ؟ …  ٰ ﴿ ﴾ ، " ' ” “ ·  ۛ  ۗ  ۚ  ۙ'''.split())
+        diacritics = ' ُ  َ  ِ  ْ  ّ  ً  ٌ  ٍ'.split()
+        return ignoreList, diacritics
     
     
     def clean_text(self):
@@ -31,7 +32,19 @@ class tokenizer:
          Output:
             - cleanedLines: A list of indices, each of which contains a cleaned line from the document.
         """
-        ignoreList = self.ignore_list()
+        ignoreList, diacritics = self.ignore_list()
+        file = [line.strip() for line in open(self.document, 'r', encoding='utf-8-sig')]
+        cleanedLines = [(''.join([word for word in line if ((word not in ignoreList) and (word not in diacritics))])).strip() for line in file]
+        return cleanedLines
+    
+    
+    def keep_diacritics(self):
+        """
+        Keep Diacritics: Removes unnecessary punctuation, English letters, and numbers but keep the diacritics.
+         Output:
+            - cleanedLines: A list of indices, each of which contains a cleaned line from the document.
+        """
+        ignoreList, diacritics = self.ignore_list()
         file = [line.strip() for line in open(self.document, 'r', encoding='utf-8-sig')]
         cleanedLines = [(''.join([word for word in line if word not in ignoreList])).strip() for line in file]
         return cleanedLines
@@ -44,5 +57,6 @@ class tokenizer:
             - tokens: A list within a list whose indices are one word from each line of the document.
         """
         cleanedLines = self.clean_text()
+        #cleanedLines = self.keep_diacritics()
         tokens = [line.split() for line in cleanedLines if line != '']
         return tokens
