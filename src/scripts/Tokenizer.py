@@ -1,5 +1,5 @@
 #    $Author: belal (risha) $
-#    $Revision: 1.2 $
+#    $Revision: 1.0 $
 
 import string
 
@@ -44,7 +44,7 @@ class tokenizer:
          Output:
             - cleanedLines: A list of indices, each of which contains a cleaned line from the document.
         """
-        ignoreList, diacritics = self.ignore_list()
+        ignoreList, _ = self.ignore_list()
         file = [line.strip() for line in open(self.document, 'r', encoding='utf-8-sig')]
         cleanedLines = [(''.join([word for word in line if word not in ignoreList])).strip() for line in file]
         return cleanedLines

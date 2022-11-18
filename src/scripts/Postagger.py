@@ -54,16 +54,16 @@ class postagger:
                     tags[word] = "Noun"
                     tagsList.append({word: "Noun"})
                 elif re.search(asmaa1, word):
-                        tags[word] = "Noun"
-                        tagsList.append({word: "Noun"})
+                    tags[word] = "Noun"
+                    tagsList.append({word: "Noun"})
                 elif (word in nouns.nouns.split(sep='|')) or (re.search(asmaa2, word)):
                     tags[word] = "Noun"
                     tagsList.append({word: "Noun"})
                 
                 
                 elif re.search(afaal1, word):
-                        tags[word] = "Verb"
-                        tagsList.append({word: "Verb"})
+                    tags[word] = "Verb"
+                    tagsList.append({word: "Verb"})
                 elif (word in verbs.verbs.split('|')) or (re.search(afaal2, word)):
                     tags[word] = "Verb"
                     tagsList.append({word: "Verb"})

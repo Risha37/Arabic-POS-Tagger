@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # belal (risha)
-# The GUI is Based on OmarQaisi/Part-Of-Speech-Tagger-for-Arabic-Language
+# The GUI is Based on OmarQaisi/Part-Of-Speech-Tagger-for-Arabic-Language with some modifications
 
 
 from tkinter import *
@@ -135,7 +135,7 @@ def save_tags():
     else:
         tags, tagsList = postagger(fileName).tag()
         df = DataFrame(tags.items())
-        df.to_csv('tags'+'.csv', encoding='utf-8-sig')
+        df.to_csv(str(fileName[:-4])+' result.csv', encoding='utf-8-sig')
 
 tag_button = Button(frame3, width=20, text='Save Tags', command=save_tags)
 tag_button['font'] = times

@@ -41,7 +41,7 @@
 39,فلما,Particle
 40,فرغ,Verb
 41,التمرة,Noun
-42,رمى,Verb
+42,رمى,Noun
 43,النواة,Noun
 44,إذا,Particle
 45,هو,Noun
@@ -62,7 +62,7 @@
 60,ما,Particle
 61,قتلت,Verb
 62,ولدي,Verb
-63,فقال,Verb
+63,فقال,Noun
 64,كيف,Noun
 65,ولدك,Verb
 66,لما,Particle
@@ -106,5 +106,5 @@
 104,بي,Particle
 105,تريد,Noun
 106,والله,Noun
-107,أقول,Verb
+107,أقول,Noun
 108,وكيل,Noun
