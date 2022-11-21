@@ -21,8 +21,6 @@ class postagger:
         Get Tokens: To obtain the tokens, using the Tokenizer class.
          Output:
             - tokens: A list within a list whose indices are one word from each line of the document.
-            - tokens_with_diac
-            - last_haraka
         """
         tokens = tk(self.document).tokenize()
         return tokens
