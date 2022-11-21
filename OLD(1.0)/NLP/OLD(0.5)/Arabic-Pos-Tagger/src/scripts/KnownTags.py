@@ -1,5 +1,5 @@
 #    $Author: ezzeddin $
-#    $Revision: 1.2 $
+#    $Revision: 0.5 $
 
 import Nouns
 import Verbs
