@@ -1,6 +1,8 @@
-#    $Author: belal (risha) $
-#    $Revision: 1.5 $
-#    The GUI is Based on OmarQaisi/Part-Of-Speech-Tagger-for-Arabic-Language with some modifications
+#!/usr/bin/env python
+# coding: utf-8
+
+# belal (risha)
+# The GUI is Based on OmarQaisi/Part-Of-Speech-Tagger-for-Arabic-Language with some modifications
 
 
 from tkinter import *
@@ -83,7 +85,7 @@ def tokenizeTheFile():
         tokenizer_textbox.delete('1.0', END)
         token = tokenizer(fileName)
         global result
-        result, _ = token.tokenize()
+        result = token.tokenize()
         tokenizer_textbox.tag_configure('tag-right', justify='right')
         for line in result:
             for word in line:
@@ -114,7 +116,7 @@ def tagWords():
         tagger_textbox.configure(state='normal')
         tagger_textbox.delete('1.0', END)
         tagger = postagger(fileName)
-        tagsList = tagger.tag()
+        tags, tagsList = tagger.tag()
         tagger_textbox.tag_configure('tag-right', justify='right')
         for tag in tagsList:
             for item in tag.items():
@@ -131,14 +133,8 @@ def save_tags():
     if not fileName:
         messagebox.showerror("Error", "Choose a file first")
     else:
-        tagsList = postagger(fileName).tag()
-
-        df1 = DataFrame.from_dict([item.keys() for item in tagsList])
-        df2 = DataFrame.from_dict([item.values() for item in tagsList])
-
-        df = DataFrame(columns= ['Word','Tag'])
-        df['Word'] = df1
-        df['Tag'] = df2
+        tags, tagsList = postagger(fileName).tag()
+        df = DataFrame(tags.items())
         df.to_csv(str(fileName[:-4])+' result.csv', encoding='utf-8-sig')
 
 tag_button = Button(frame3, width=20, text='Save Tags', command=save_tags)

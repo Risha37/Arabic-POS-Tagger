@@ -1,11 +1,9 @@
 #    $Author: belal (risha) $
-#    $Revision: 1.0 $
+#    $Revision: 1.5 $
 
 import re
 from Tokenizer import tokenizer as tk
 from patterns import Patterns as pt
-import nouns
-import verbs
 
 class postagger:
     """
@@ -23,9 +21,13 @@ class postagger:
         Get Tokens: To obtain the tokens, using the Tokenizer class.
          Output:
             - tokens: A list within a list whose indices are one word from each line of the document.
+            - tokens_with_diac
+            - last_haraka
         """
-        tokens = tk(self.document).tokenize()
-        return tokens
+        tokens, tokens_with_diac = tk(self.document).tokenize()
+        last_haraka = tk(self.document).keep_last_haraka()
+        return tokens, tokens_with_diac, last_haraka
+    
     
     
     def tag(self):
@@ -33,48 +35,38 @@ class postagger:
         PosTag: Divide each word into its respective tag (Noun, Verb, Particle) using the provided rules.
          Outputs:
             - tagsList: A list that contains the tags ordered with respect to the word.
-            - tags: A dictionary that includes each word and its associated tag.
         """
+        horoof, asmaa, afaal = pt().get_patterns()
+        tokens, tokens_with_diac, last_haraka = self.get_tokens()
+        tanween = ' ً  ٌ  ٍ'.split()
         
-        afaal1, afaal2, horoof, asmaa1, asmaa2 = pt().get_patterns()
-        tokens = self.get_tokens()
-        
-        tags = {}
         tagsList = []
         
-        for sentence in tokens:
-            for word in sentence:
-                
-                if re.search(horoof, word) or word=='و':
-                    tags[word] = "Particle"
-                    tagsList.append({word: "Particle"})
+        
+        for i in range(len(tokens)):
+            for j in range(len(tokens[i])):
                 
                 
-                elif word.startswith(('ال', 'كال', 'فال', 'بال')) or word.endswith(('ة', 'ات', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه', 'هما', 'كما')):
-                    tags[word] = "Noun"
-                    tagsList.append({word: "Noun"})
-                elif re.search(asmaa1, word):
-                    tags[word] = "Noun"
-                    tagsList.append({word: "Noun"})
-                elif (word in nouns.nouns.split(sep='|')) or (re.search(asmaa2, word)):
-                    tags[word] = "Noun"
-                    tagsList.append({word: "Noun"})
+                if (re.search(horoof, tokens[i][j]) or tokens[i][j]=='و') and (tokens[i][j]!='كان'):
+                    tagsList.append({tokens[i][j]: "Particle"})
                 
                 
-                elif re.search(afaal1, word):
-                    tags[word] = "Verb"
-                    tagsList.append({word: "Verb"})
-                elif (word in verbs.verbs.split('|')) or (re.search(afaal2, word)):
-                    tags[word] = "Verb"
-                    tagsList.append({word: "Verb"})
-                elif len(word) == 3:
-                    tags[word] = "Verb"
-                    tagsList.append({word: "Verb"})
+                elif tokens[i][j].startswith(('ال', 'كال', 'فال', 'بال')) or tokens[i][j].endswith(('ة', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه')):
+                    tagsList.append({tokens[i][j]: "Noun"})
+                elif (len(tokens[i][j])>2) and ((last_haraka[i][j][-1] in tanween) or (last_haraka[i][j][-2] in tanween)):
+                    tagsList.append({tokens[i][j]: "Noun"})
+                    
+                    
+                elif re.search(afaal, tokens[i][j]):
+                    tagsList.append({tokens[i][j]: "Verb"})
+                    
+                    
+                elif re.search(asmaa, tokens[i][j]):
+                    tagsList.append({tokens[i][j]: "Noun"})
                     
                 
                 else:
-                    tags[word] = "Noun"
-                    tagsList.append({word: "Noun"})
+                    tagsList.append({tokens[i][j]: "Don't Know"})
         
         
-        return tags, tagsList
+        return tagsList
