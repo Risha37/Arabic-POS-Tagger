@@ -32,13 +32,11 @@ class tokenizer:
         Clean Text: Removes unnecessary punctuation, diacritics, English letters, and numbers.
          Output:
             - cleanedLines: A list of indices, each of which contains a cleaned line from the document.
-            - keep_diacritics: A list of indices, each of which contains a cleaned line from the document BUT keeping the diacritics.
         """
         ignoreList, diacritics = self.ignore_list()
         file = [line.strip() for line in open(self.document, 'r', encoding='utf-8-sig')]
         cleanedLines = [(''.join([word for word in line if ((word not in ignoreList) and (word not in diacritics))])).strip() for line in file]
-        keep_diacritics = [(''.join([word for word in line if word not in ignoreList])).strip() for line in file] # Keep All Diacritics
-        return cleanedLines, keep_diacritics
+        return cleanedLines
     
     
     def tokenize(self):
@@ -46,12 +44,12 @@ class tokenizer:
         Tokenize: Using the split() function, create a list within a list of each word of the document's line from the output of clean_text().
          Output:
             - tokens: A list within a list whose indices are one word from each line of the document.
-            - tokens_with_diac
         """
-        cleanedLines, keep_diacritics = self.clean_text()
+        cleanedLines = self.clean_text()
         tokens = [line.split() for line in cleanedLines if line != '']
-        tokens_with_diac = [line.split() for line in keep_diacritics if line != ''] # Keep All Diacritics
-        return tokens, tokens_with_diac
+        return tokens
+    
+    
     
     
     def keep_last_haraka(self):
@@ -59,11 +57,15 @@ class tokenizer:
         Keep Last Haraka: Keep the last diacritic of each word if there is one.
          Output:
             - last_haraka
+            - tokens_with_diac
         """
-        _, tokens_with_diac = self.tokenize()
-        _, diacritics = self.ignore_list()
+        ignoreList, diacritics = self.ignore_list()
+        file = [line.strip() for line in open(self.document, 'r', encoding='utf-8-sig')]
+        keep_diacritics = [(''.join([word for word in line if word not in ignoreList])).strip() for line in file] # Keep All Diacritics
+        tokens_with_diac = [line.split() for line in keep_diacritics if line != ''] # Keep All Diacritics
         tanween = ' ً  ٌ  ٍ'.split()
+        
         last_haraka = [[(''.join([letter for letter in word[:-2] if letter not in diacritics]) + word[-2:]) if (len(word)>=2 and word[-2] in tanween)
                 else (''.join([letter for letter in word[:-1] if letter not in diacritics]) + word[-1]) if (word[-1] in diacritics) 
                 else (''.join([letter for letter in word if letter not in diacritics])) for word in line] for line in tokens_with_diac]
-        return last_haraka
+        return last_haraka, tokens_with_diac

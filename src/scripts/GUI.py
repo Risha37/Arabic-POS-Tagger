@@ -83,7 +83,7 @@ def tokenizeTheFile():
         tokenizer_textbox.delete('1.0', END)
         token = tokenizer(fileName)
         global result
-        result, _ = token.tokenize()
+        result = token.tokenize()
         tokenizer_textbox.tag_configure('tag-right', justify='right')
         for line in result:
             for word in line:

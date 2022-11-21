@@ -24,9 +24,8 @@ class postagger:
             - tokens_with_diac
             - last_haraka
         """
-        tokens, tokens_with_diac = tk(self.document).tokenize()
-        last_haraka = tk(self.document).keep_last_haraka()
-        return tokens, tokens_with_diac, last_haraka
+        tokens = tk(self.document).tokenize()
+        return tokens
     
     
     
@@ -37,8 +36,7 @@ class postagger:
             - tagsList: A list that contains the tags ordered with respect to the word.
         """
         horoof, asmaa, afaal = pt().get_patterns()
-        tokens, tokens_with_diac, last_haraka = self.get_tokens()
-        tanween = ' ً  ٌ  ٍ'.split()
+        tokens = self.get_tokens()
         
         tagsList = []
         
@@ -51,9 +49,7 @@ class postagger:
                     tagsList.append({tokens[i][j]: "Particle"})
                 
                 
-                elif tokens[i][j].startswith(('ال', 'كال', 'فال', 'بال')) or tokens[i][j].endswith(('ة', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه')):
-                    tagsList.append({tokens[i][j]: "Noun"})
-                elif (len(tokens[i][j])>2) and ((last_haraka[i][j][-1] in tanween) or (last_haraka[i][j][-2] in tanween)):
+                elif tokens[i][j].startswith(('ال', 'كال', 'فال', 'بال', 'وال')) or tokens[i][j].endswith(('ة', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه')):
                     tagsList.append({tokens[i][j]: "Noun"})
                     
                     
