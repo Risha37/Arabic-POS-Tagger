@@ -46,24 +46,24 @@ noun_tags = 'NN NNP JJ DTNN NNS DTJJ DTNNS DTNNP VN VBG JJR DTJJR ADJ_NUM NOUN_Q
 particle_tags = 'IN WRB CC'.split()
 
 for i in y.items():
-    if i[0] not in ignoreList and i[1] not in 'CD PRP$ PUNC'.split():
+    if (i[0] not in ignoreList) and (i[1] not in 'CD PRP$ PUNC'.split()):
         
-        if i[1] in verb_tags:
-            new_y[str(i[0])] = 'Verb'
-            
-        elif i[1] in noun_tags:
-            if i[0].startswith(('ال', 'لل')):
-                new_y[str(i[0][2:])] = 'Noun'
-            elif i[0].startswith(('كال', 'فال', 'بال', 'وال', 'ولل')):
-                new_y[str(i[0][3:])] = 'Noun'
+            if i[1] in verb_tags:
+                new_y[str(i[0])] = 'Verb'
+
+            elif i[1] in noun_tags:
+                if (i[0].startswith(('ال', 'لل'))) and (str(i[0][2:]) not in new_y):
+                    new_y[str(i[0][2:])] = 'Noun'
+                elif (i[0].startswith(('كال', 'فال', 'بال', 'وال', 'ولل'))) and (str(i[0][3:]) not in new_y):
+                    new_y[str(i[0][3:])] = 'Noun'
+                else:
+                    new_y[str(i[0])] = 'Noun'
+
+            elif i[1] in particle_tags:
+                new_y[str(i[0])] = 'Particle'
+
             else:
-                new_y[str(i[0])] = 'Noun'
-                
-        elif i[1] in particle_tags:
-            new_y[str(i[0])] = 'Particle'
-            
-        else:
-            new_y[str(i[0])] = 'Unknown'
+                new_y[str(i[0])] = 'Unknown'
             
             
             
