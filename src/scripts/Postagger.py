@@ -50,10 +50,16 @@ class postagger:
                 # N.1
                 elif tokens[i][j].startswith(('ال', 'كال', 'فال', 'بال', 'وال')) or tokens[i][j].endswith(('ة', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه', 'اء')):
                     tagsList.append({tokens[i][j]: "Noun"})
-                    
-                    
                 # V.1
                 elif (tokens[i][j].startswith(('است'))) or (tokens[i][j].startswith(('ت', 'ي', 'سأ', 'سي', 'ست', 'سن')) and tokens[i][j].endswith(('ون', 'وا', 'ين'))):
+                    tagsList.append({tokens[i][j]: "Verb"})
+                    
+                    
+                # V.2
+                elif re.search(afaal2, tokens[i][j]):
+                    tagsList.append({tokens[i][j]: "Verb"})
+                # V.3
+                elif re.search(afaal3, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Verb"})
                     
                     
@@ -65,25 +71,20 @@ class postagger:
                     tagsList.append({tokens[i][j]: "Noun"})
                     
                     
-                # V.2
-                elif re.search(afaal2, tokens[i][j]):
-                    tagsList.append({tokens[i][j]: "Verb"})
-                # V.3
-                elif re.search(afaal3, tokens[i][j]):
-                    tagsList.append({tokens[i][j]: "Verb"})
                 # V.4
                 elif re.search(afaal, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Verb"})
-                    
-                    
                 # N.4
                 elif re.search(asmaa, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Noun"})
                     
                     
-                # ??
+                # V.5
+                elif len(tokens[i][j]) == 3:
+                    tagsList.append({tokens[i][j]: "Verb"})
+                # N.5
                 else:
-                    tagsList.append({tokens[i][j]: "Don't Know"})
+                    tagsList.append({tokens[i][j]: "Noun"})
         
         
         return tagsList
