@@ -68,6 +68,43 @@ for i in y.items():
             
             
             
+            
+nouns = ''
+verbs = ''
+particles = ''
+unknown = ''
+
+for i in new_y.items():
+    
+    if i[1] == 'Verb':
+        verbs += str(i[0])+'|'
+    elif i[1] == 'Noun':
+        nouns += str(i[0])+'|'
+    elif i[1] == 'Particle':
+        particles += str(i[0])+'|'
+    else:
+        unknown.join(i[0])
+        
+        
+        
+
+text_file = open("particles.txt", "w", encoding='utf-8-sig')
+n = text_file.write(particles)
+text_file.close()
+
+text_file = open("verbs.txt", "w", encoding='utf-8-sig')
+n = text_file.write(verbs)
+text_file.close()
+
+text_file = open("nouns.txt", "w", encoding='utf-8-sig')
+n = text_file.write(nouns)
+text_file.close()
+
+
+            
+            
+            
+            
 import pandas as pd
 
 df1 = pd.DataFrame.from_dict(new_y.keys())
