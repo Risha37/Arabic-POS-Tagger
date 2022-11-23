@@ -22,7 +22,7 @@ class tokenizer:
             - diacritics: A list of Arabic diacritics
         """
         ignoreList = (list(string.punctuation) + list(string.ascii_letters) +
-                      '''ﷺ 1 2 3 4 5 6 7 8 9 0 ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ؟ …  ٰ ﴿ ﴾ ، " ' ” “ ·  ۛ  ۗ  ۚ  ۙ  ۖ'''.split())
+                      '''ﷺ 1 2 3 4 5 6 7 8 9 0 ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ؟ …  ٰ ﴿ ﴾ ، " ' ” “ ·  ۛ  ۗ  ۚ  ۙ  ۖ ؛ ‘ ـ'''.split())
         diacritics = ' ُ  َ  ِ  ْ  ّ  ً  ٌ  ٍ'.split()
         return ignoreList, diacritics
     
@@ -66,6 +66,6 @@ class tokenizer:
         tanween = ' ً  ٌ  ٍ'.split()
         
         last_haraka = [[(''.join([letter for letter in word[:-2] if letter not in diacritics]) + word[-2:]) if (len(word)>=2 and word[-2] in tanween)
-                else (''.join([letter for letter in word[:-1] if letter not in diacritics]) + word[-1]) if (word[-1] in diacritics) 
+                else (''.join([letter for letter in word[:-1] if letter not in diacritics]) + word[-1]) if (word[-1] in diacritics)
                 else (''.join([letter for letter in word if letter not in diacritics])) for word in line] for line in tokens_with_diac]
         return last_haraka, tokens_with_diac

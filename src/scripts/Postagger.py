@@ -42,23 +42,30 @@ class postagger:
         for i in range(len(tokens)):
             for j in range(len(tokens[i])):
                 
-                
+                # P.1
                 if (re.search(horoof, tokens[i][j]) or tokens[i][j]=='و') and (tokens[i][j]!='كان'):
                     tagsList.append({tokens[i][j]: "Particle"})
-                
-                
-                elif tokens[i][j].startswith(('ال', 'كال', 'فال', 'بال', 'وال')) or tokens[i][j].endswith(('ة', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه')):
+                    
+                    
+                # N.1
+                elif tokens[i][j].startswith(('ال', 'كال', 'فال', 'بال', 'وال')) or tokens[i][j].endswith(('ة', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه', 'اء')):
                     tagsList.append({tokens[i][j]: "Noun"})
                     
                     
+                # V.1
+                elif tokens[i][j].startswith(('ت', 'ي', 'سأ', 'سي', 'ست', 'سن')) and tokens[i][j].endswith(('ون', 'وا', 'ين')):
+                    tagsList.append({tokens[i][j]: "Verb"})
+                # V.2
                 elif re.search(afaal, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Verb"})
                     
                     
+                # N.2
                 elif re.search(asmaa, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Noun"})
                     
-                
+
+                # ??
                 else:
                     tagsList.append({tokens[i][j]: "Don't Know"})
         
