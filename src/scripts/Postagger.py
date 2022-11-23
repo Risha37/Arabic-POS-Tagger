@@ -33,7 +33,7 @@ class postagger:
          Outputs:
             - tagsList: A list that contains the tags ordered with respect to the word.
         """
-        horoof, asmaa, afaal = pt().get_patterns()
+        horoof, asmaa, asmaa2, asmaa3, afaal, afaal2, afaal3 = pt().get_patterns()
         tokens = self.get_tokens()
         
         tagsList = []
@@ -53,18 +53,36 @@ class postagger:
                     
                     
                 # V.1
-                elif tokens[i][j].startswith(('ت', 'ي', 'سأ', 'سي', 'ست', 'سن')) and tokens[i][j].endswith(('ون', 'وا', 'ين')):
+                elif (tokens[i][j].startswith(('است'))) or (tokens[i][j].startswith(('ت', 'ي', 'سأ', 'سي', 'ست', 'سن')) and tokens[i][j].endswith(('ون', 'وا', 'ين'))):
                     tagsList.append({tokens[i][j]: "Verb"})
+                    
+                    
                 # V.2
-                elif re.search(afaal, tokens[i][j]):
+                elif re.search(afaal2, tokens[i][j]):
+                    tagsList.append({tokens[i][j]: "Verb"})
+                # V.3
+                elif re.search(afaal3, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Verb"})
                     
                     
                 # N.2
+                elif re.search(asmaa2, tokens[i][j]):
+                    tagsList.append({tokens[i][j]: "Noun"})
+                # N.3
+                elif re.search(asmaa3, tokens[i][j]):
+                    tagsList.append({tokens[i][j]: "Noun"})
+                    
+                    
+                # V.4
+                elif re.search(afaal, tokens[i][j]):
+                    tagsList.append({tokens[i][j]: "Verb"})
+                    
+                    
+                # N.4
                 elif re.search(asmaa, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Noun"})
                     
-
+                    
                 # ??
                 else:
                     tagsList.append({tokens[i][j]: "Don't Know"})

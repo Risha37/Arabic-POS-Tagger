@@ -85,6 +85,10 @@ for i in new_y.items():
     else:
         unknown.join(i[0])
         
+verbs = verbs[:-1]
+nouns = nouns[:-1]
+particles = particles[:-1]
+        
         
         
 

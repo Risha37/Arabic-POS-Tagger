@@ -14,8 +14,8 @@ class Patterns:
                 
         horoof = hor.horoof()
         
-        asmaa = asm.asmaa()
+        asmaa, asmaa2, asmaa3 = asm.asmaa()
         
-        afaal = afa.afaal()
+        afaal, afaal2, afaal3 = afa.afaal()
         
-        return horoof, asmaa, afaal
+        return horoof, asmaa, asmaa2, asmaa3, afaal, afaal2, afaal3
