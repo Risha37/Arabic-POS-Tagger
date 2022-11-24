@@ -51,31 +51,31 @@ class postagger:
                 elif tokens[i][j].startswith(('ال', 'كال', 'فال', 'بال', 'وال')) or tokens[i][j].endswith(('ة', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه', 'اء')):
                     tagsList.append({tokens[i][j]: "Noun"})
                 # V.1
-                elif (tokens[i][j].startswith(('است'))) or (tokens[i][j].startswith(('ت', 'ي', 'سأ', 'سي', 'ست', 'سن')) and tokens[i][j].endswith(('ون', 'وا', 'ين'))):
+                elif (tokens[i][j].startswith(('است', 'يست', 'نست', 'تست'))) or (tokens[i][j].startswith(('ت', 'ي', 'سأ', 'سي', 'ست', 'سن', 'تست')) and tokens[i][j].endswith(('ون', 'وا', 'ين'))):
                     tagsList.append({tokens[i][j]: "Verb"})
                     
                     
+                # V.2
+                elif re.search(afaal, tokens[i][j]):
+                    tagsList.append({tokens[i][j]: "Verb"})
                 # N.2
+                elif re.search(asmaa, tokens[i][j]):
+                    tagsList.append({tokens[i][j]: "Noun"})
+                    
+                    
+                # N.3
                 elif re.search(asmaa3, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Noun"})
-                # V.2
+                # V.3
                 elif re.search(afaal3, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Verb"})
                     
                     
-                # V.3
+                # V.4
                 elif re.search(afaal2, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Verb"})
-                # N.3
-                elif re.search(asmaa2, tokens[i][j]):
-                    tagsList.append({tokens[i][j]: "Noun"})
-                    
-                    
-                # V.4
-                elif re.search(afaal, tokens[i][j]):
-                    tagsList.append({tokens[i][j]: "Verb"})
                 # N.4
-                elif re.search(asmaa, tokens[i][j]):
+                elif re.search(asmaa2, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Noun"})
                     
                     
