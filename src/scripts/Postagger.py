@@ -48,7 +48,7 @@ class postagger:
                     
                     
                 # N.1
-                elif tokens[i][j].startswith(('ال', 'كال', 'فال', 'بال', 'وال')) or tokens[i][j].endswith(('ة', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه', 'اء')):
+                elif tokens[i][j].startswith(('ال', 'كال', 'فال', 'بال', 'وال')) or tokens[i][j].endswith(('ة', 'ائي', 'ائك', 'ائه', 'اؤك', 'اؤه', 'اءك', 'اءه', 'اء', 'ات')):
                     tagsList.append({tokens[i][j]: "Noun"})
                 # V.1
                 elif (tokens[i][j].startswith(('است', 'يست', 'نست', 'تست'))) or (tokens[i][j].startswith(('ت', 'ي', 'سأ', 'سي', 'ست', 'سن', 'تست')) and tokens[i][j].endswith(('ون', 'وا', 'ين'))):
