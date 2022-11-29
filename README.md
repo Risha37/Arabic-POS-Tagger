@@ -1,4 +1,4 @@
-# Arabic-Pos-Tagger
+# Arabic POS-Tagger
 
 ### An implementation of a Rule-Based Part-of-Speech tagger for the Arabic language for the required NLP course project at BAU.
 
