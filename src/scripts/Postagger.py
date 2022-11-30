@@ -55,20 +55,20 @@ class postagger:
                     tagsList.append({tokens[i][j]: "Verb"})
                     
                     
-                # N.2
-                elif re.search(asmaa3, tokens[i][j]):
-                    tagsList.append({tokens[i][j]: "Noun"})
                 # V.2
-                elif re.search(afaal3, tokens[i][j]):
-                    tagsList.append({tokens[i][j]: "Verb"})
-                    
-                    
-                # V.3
                 elif re.search(afaal, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Verb"})
-                # N.3
+                # N.2
                 elif re.search(asmaa, tokens[i][j]):
                     tagsList.append({tokens[i][j]: "Noun"})
+                    
+                    
+                # N.3
+                elif re.search(asmaa3, tokens[i][j]):
+                    tagsList.append({tokens[i][j]: "Noun"})
+                # V.3
+                elif re.search(afaal3, tokens[i][j]):
+                    tagsList.append({tokens[i][j]: "Verb"})
                     
                     
                 # V.4
