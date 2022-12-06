@@ -10,6 +10,7 @@
 <img width="807" alt="Screen Shot 2022-11-12 at 7 25 25 PM" src="https://user-images.githubusercontent.com/115495017/201484135-fa46de84-d3a4-42c0-b86f-7e3c1c58876f.png">
 
 ------------------------------------------------------------------------------------------------------------------------------
-# Approach
-##
+# Approach & Workflow
+# Evaluation
+## Accuracy
 
